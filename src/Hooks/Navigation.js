@@ -1,9 +1,19 @@
-
+import "../Styles/navigation.css";
 
 const navigation = () => {
     return (
         <div className="navigation">
-            Home
+            <div>
+                Shopping page
+            </div>
+            <div>
+                <div>
+                    Shop
+                </div>
+                <div>
+                    Cart
+                </div>
+            </div>
         </div>
     )
 }
