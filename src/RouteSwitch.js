@@ -1,8 +1,8 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Homepage from "./Homepage";
-import Shoppingpage from "./Shopping-page";
+import Homepage from "./Hooks/Homepage";
+import Shoppingpage from "./Hooks/Shopping-page";
 import React, { useEffect, useState } from "react";
-import Navigation from "./Navigation";
+import Navigation from "./Hooks/Navigation";
 
 const RouteSwitch = () => {
     return (

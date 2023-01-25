@@ -2,7 +2,9 @@
 
 const navigation = () => {
     return (
-        <div>Navigation</div>
+        <div className="navigation">
+            Home
+        </div>
     )
 }
 
