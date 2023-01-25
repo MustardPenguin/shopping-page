@@ -1,4 +1,5 @@
 import "../Styles/navigation.css";
+import cart from "../Images/cart1.png";
 
 const navigation = () => {
     return (
@@ -7,12 +8,12 @@ const navigation = () => {
                 Shopping page
             </div>
             <div>
-                <div>
+                <button>
                     Shop
-                </div>
-                <div>
-                    Cart
-                </div>
+                </button>
+                <button className="cart-icon">
+                    <img src={cart} alt="cart"></img>
+                </button>
             </div>
         </div>
     )
