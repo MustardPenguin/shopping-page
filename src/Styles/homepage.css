@@ -7,8 +7,15 @@
 
 .homepage-holder {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     gap: 30px;
+
+    flex-wrap: wrap;
+    max-width: 1200px;
+}
+
+.homepage-holder > div:first-child {
+    width: 50%;
 }
 
 .homepage-holder > div:first-child > div:first-child {
@@ -23,6 +30,6 @@
 }
 
 .oreo {
-    width: 400px;
+    max-width: 400px;
     height: 500px;
 }

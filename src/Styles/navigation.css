@@ -29,7 +29,7 @@ html {
     gap: 72px;
 }
 
-.navigation button {
+.navigation a {
     font-size: 24px;
     font-weight: bold;
     color: white;
@@ -38,6 +38,7 @@ html {
     outline: none;
     border: none;
     cursor: pointer;
+    text-decoration: none;
 }
 
 .cart-icon {

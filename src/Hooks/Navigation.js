@@ -8,17 +8,17 @@ const navigation = () => {
                 Shopping page
             </div>
             <div>
-                <button>
+                <a href="/">
                     Home
-                </button>
-                <button>
+                </a>
+                <a href="/shop">
                     Shop
-                </button>
+                </a>
 
-                <button className="cart-icon">
+                <a className="cart-icon">
                     <img src={cart} alt="cart"></img>
                     <div>1</div>
-                </button>
+                </a>
             </div>
         </div>
     )
