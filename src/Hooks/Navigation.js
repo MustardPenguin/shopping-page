@@ -11,8 +11,11 @@ const navigation = () => {
                 <button>
                     Shop
                 </button>
+
                 <button className="cart-icon">
+                   
                     <img src={cart} alt="cart"></img>
+                    <div>1</div>
                 </button>
             </div>
         </div>
