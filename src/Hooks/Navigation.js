@@ -9,11 +9,13 @@ const navigation = () => {
             </div>
             <div>
                 <button>
+                    Home
+                </button>
+                <button>
                     Shop
                 </button>
 
                 <button className="cart-icon">
-                   
                     <img src={cart} alt="cart"></img>
                     <div>1</div>
                 </button>

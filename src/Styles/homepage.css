@@ -1,0 +1,28 @@
+.homepage {
+    margin: 100px;
+
+    display: flex;
+    justify-content: center;
+}
+
+.homepage-holder {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.homepage-holder > div:first-child > div:first-child {
+    font-size: 75px;
+    font-weight: bold;
+}
+
+.homepage-holder > div:first-child > div:nth-child(2n) {
+    font-size: 36px;
+    padding-left: 10px;
+    padding-top: 12px;
+}
+
+.oreo {
+    width: 400px;
+    height: 500px;
+}
