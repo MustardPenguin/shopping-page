@@ -9,8 +9,9 @@ const RouteSwitch = () => {
     return (
         <BrowserRouter>
             <div>
-                <Navigation />
                 <Cart />
+                <Navigation />
+                
                 <Routes>
                     <Route path="/" element={<Homepage />} />
                     <Route path="/shop" element={<Shoppingpage />} />
