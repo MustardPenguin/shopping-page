@@ -1,3 +1,7 @@
+:root {
+    --cart-width: 500px;
+}
+
 .cart-background {
     position: fixed;
     width: 100%;
@@ -10,13 +14,47 @@
     position: absolute;
     background-color: white;
 
-    min-width: 500px;
+    min-width: var(--cart-width);
     height: 100%;
-    left: 100%;
-    transform: translateX(-500px);
+}
+
+@keyframes disable {
+    from{opacity: 1;}
+    to{
+        opacity: 0;
+        transform: translateX( var(--cart-width) );
+    }
+}
+
+@keyframes enable {
+    from{opacity: 0;}
+    to{
+        opacity: 1;
+        transform: translateX( calc( var(--cart-width) * -1 ) );
+    }
+}
+
+@keyframes opacity-off {
+    from{opacity: 1;}
+    to{opacity: 0;}
 }
 
 .disable-cart {
     opacity: 0;
     z-index: -9;
+    animation: opacity-off 1s;
+}
+
+.enable-cart {
+    opacity: 1;
+}
+
+.cart-enable-animation {
+    left: 100%;
+    animation: enable 1s linear forwards;    
+}
+
+.cart-disable-animation {
+    left: calc(100% - var(--cart-width));
+    animation: disable 1s linear forwards;
 }

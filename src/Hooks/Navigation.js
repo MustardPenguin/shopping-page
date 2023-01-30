@@ -5,13 +5,17 @@ const navigation = () => {
 
     const toggleCart = () => {
         const cartBackground = document.querySelector('.cart-background');
+        const cartIcon = document.querySelector(".cart-icon");
         const cart = document.querySelector(".cart");
         if(cartBackground.classList.contains("disable-cart")) {
             cartBackground.classList.remove("disable-cart");
             cart.classList.remove("disable-cart");
-        } else {
-            cartBackground.classList.add("disable-cart");
-            cart.classList.add("disable-cart");
+            cart.classList.remove("cart-disable-animation");
+            cart.classList.add("enable-cart");
+            cart.classList.add("cart-enable-animation");
+            cartIcon.classList.add("disable-cart");
+
+            console.log(cart.getBoundingClientRect());
         }
     }
 
