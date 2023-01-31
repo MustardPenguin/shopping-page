@@ -3,9 +3,24 @@ import "../Styles/cart.css";
 
 const Cart = () => {
     const [items, setItems] = useState({});
-    
+
+    let cartCooldown = false;
+
+    const setCartCooldown = (cd) => {
+        const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));
+        async function cooldown() {
+            cartCooldown = true;
+            await sleep(1000);
+            cartCooldown = false;
+        }
+
+        cooldown();
+    }
+
     const toggleCart = (event) => {
+        if(cartCooldown) { return; }
         if(event.target.classList.contains("cart")) { return; }
+        setCartCooldown();
 
         const cartBackground = document.querySelector('.cart-background');
         const cartIcon = document.querySelector(".cart-icon");
@@ -15,12 +30,11 @@ const Cart = () => {
             cart.classList.remove("disable-cart");
         } else {
             cartBackground.classList.add("disable-cart");
-            cart.classList.add("disable-cart");
+            /*cart.classList.add("disable-cart");*/
             cart.classList.add("cart-disable-animation");
             cart.classList.remove("enable-cart");
             cart.classList.remove("cart-enable-animation");
             cartIcon.classList.remove("disable-cart");
-            console.log(cart.getBoundingClientRect());
         }
     }
 

@@ -14,8 +14,6 @@ const navigation = () => {
             cart.classList.add("enable-cart");
             cart.classList.add("cart-enable-animation");
             cartIcon.classList.add("disable-cart");
-
-            console.log(cart.getBoundingClientRect());
         }
     }
 
