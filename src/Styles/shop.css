@@ -1,0 +1,14 @@
+.shop {
+    width: 100%;
+    min-height: 200px;
+
+    display: flex;
+    justify-content: center;
+}
+
+.shop-holder {
+    background-color: aliceblue;
+    margin-top: 75px;
+    width: 80%;
+    min-height: 200px;
+}

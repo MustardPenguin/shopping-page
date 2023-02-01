@@ -20,7 +20,6 @@ html {
 .navigation > div:first-child {
     font-weight: bolder;
     font-size: 36px;
-    text-decoration: underline;
 }
 
 .navigation > div:nth-child(2n) {

@@ -4,6 +4,8 @@ import Shoppingpage from "./Hooks/Shopping-page";
 import React, { useEffect, useState } from "react";
 import Navigation from "./Hooks/Navigation";
 import Cart from "./Hooks/Cart";
+import Items from "./Hooks/Items";
+import ItemPage from "./Hooks/ItemPage";
 
 const RouteSwitch = () => {
     return (
@@ -15,6 +17,7 @@ const RouteSwitch = () => {
                 <Routes>
                     <Route path="/" element={<Homepage />} />
                     <Route path="/shop" element={<Shoppingpage />} />
+                    <Route path="/shop/:id" element={<ItemPage />} />
                 </Routes>
             </div>
         </BrowserRouter>
