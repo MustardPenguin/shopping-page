@@ -2,6 +2,8 @@
     --cart-width: 500px;
 }
 
+/* Cart background */
+
 .cart-background {
     position: fixed;
     width: 100%;
@@ -47,6 +49,11 @@
     100%{z-index: -9;}
 }
 
+.initial-class {
+    opacity: 0;
+    left: 100%;
+}
+
 .disable-cart {
     opacity: 0;
     /*z-index: -9;*/
@@ -74,3 +81,5 @@
     left: calc(100% - var(--cart-width));
     animation: disable .5s linear forwards;
 }
+
+/* Cart */

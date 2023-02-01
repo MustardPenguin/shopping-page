@@ -19,12 +19,16 @@ const Cart = () => {
 
     const toggleCart = (event) => {
         if(cartCooldown) { return; }
+
+
+        
         if(event.target.classList.contains("cart")) { return; }
         setCartCooldown();
 
         const cartBackground = document.querySelector('.cart-background');
         const cartIcon = document.querySelector(".cart-icon");
         const cart = document.querySelector(".cart");
+
         if(cartBackground.classList.contains("disable-cart")) {
             cartBackground.classList.remove("disable-cart");
             cart.classList.remove("disable-cart");
@@ -39,8 +43,15 @@ const Cart = () => {
     }
 
     return (
-        <div className="cart-background disable-cart disable-cart-animation" onClick={toggleCart}>
-            <div className="cart disable-cart"></div>
+        <div className="cart-background disable-cart disable-cart-animation initial-class" onClick={toggleCart}>
+            <div className="cart disable-cart initial-class">
+                <div className="cart-top">
+                    cart
+                </div>
+                <div className="cart-holder">
+                    holder
+                </div>
+            </div>
         </div>
     )
 }
