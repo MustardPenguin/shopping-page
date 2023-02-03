@@ -10,18 +10,18 @@
     background-color: aliceblue;
     margin-top: 75px;
     margin-bottom: 50px;
-    width: 80%;
+    width: 75%;
     min-height: 200px;
 
     padding: 15px;
     display: grid;
-    grid-template-columns: repeat(3, 3fr);
-    grid-template-rows: repeat(auto-fit, 200px);
+    grid-template-columns: repeat(3, 4fr);
+    grid-template-rows: repeat(auto-fit, 250px);
     gap: 15px;
 }
 
 .shop-item {
-    height: 200px;
+    height: 250px;
 
     border-width: 1px;
     border-style: dashed;

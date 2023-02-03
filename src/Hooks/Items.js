@@ -3,12 +3,14 @@ const items = [
         id: "toaster",
         name: "Toaster",
         description: "a nice toaster",
+        image: "toaster.png",
         price: 199.99,
     },
     {
         id: "white-t-shirt",
         name: "White T-shirt",
         description: "a clean white shirt",
+        
         price: 29.99,
     },
     {
