@@ -12,17 +12,37 @@
     margin-bottom: 50px;
     width: 75%;
     min-height: 200px;
+    min-width: 100px;
 
     padding: 15px;
     display: grid;
-    grid-template-columns: repeat(3, 4fr);
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     grid-template-rows: repeat(auto-fit, 250px);
+    grid-auto-flow: row;
     gap: 15px;
+    justify-content: center;
 }
 
 .shop-item {
     height: 250px;
-
     border-width: 1px;
     border-style: dashed;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.shop-item img {
+    min-width: 80%;
+    height: 70%;
+    margin-bottom: 8px;
+    cursor: pointer;
+}
+
+.item-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }

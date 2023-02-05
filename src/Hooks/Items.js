@@ -7,16 +7,16 @@ const items = [
         price: 199.99,
     },
     {
-        id: "white-t-shirt",
+        id: "whitetshirt",
         name: "White T-shirt",
         description: "a clean white shirt",
         
         price: 29.99,
     },
     {
-        id: "rotten-apple",
-        name: "Rotten apple",
-        description: "an apple left to rot for 2 weeks",
+        id: "apple",
+        name: "Apple",
+        description: "a fresh apple",
         price: 4.99,
     },
     {
@@ -26,11 +26,11 @@ const items = [
         price: 29.99,
     },
     {
-        id: "plastic-taco", name: "Plastic taco",
-        description: "a blessed taco made of plastic", price: 499.99
+        id: "taco", name: "Taco",
+        description: "a blessed taco", price: 499.99
     },
     {
-        id: "golden-monkey", name: "Golden monkey",
+        id: "goldenmonkey", name: "Golden monkey",
         description: "the golden one", price: 29999.99
     }
 ]
