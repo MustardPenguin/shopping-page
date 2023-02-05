@@ -1,12 +1,15 @@
+/* Misc */
 * {
     margin: 0px;
     padding: 0px;
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
 }
 
-html {
+html, body, #root, #root > div:first-child {
     height: 100%;
 }
+
+/* Navigation */
 
 .navigation {
     background-color: black;
