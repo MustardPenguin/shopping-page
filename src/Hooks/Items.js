@@ -9,7 +9,10 @@ const items = [
     {
         id: "whitetshirt",
         name: "White T-shirt",
-        description: "a clean white shirt",
+        description: "a clean white shirt, one might consider it to be very basic," 
+        + " however, i think otherwise, i believe that it is a very nice "
+        + "t shirt, as a matter of fact, it isn't just any plain "
+        + "white t shirt, it was made specifically to be white ",
         
         price: 29.99,
     },

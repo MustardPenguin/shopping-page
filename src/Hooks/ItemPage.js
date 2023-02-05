@@ -11,9 +11,9 @@ const ItemPage = () => {
     const { id } = useParams();
     const item = getItem(id);
 
-    useEffect(() => {
-
-    })
+    const onChange = (a) => {
+        console.log("Changed: " + a);
+    }
 
     return (
         <div className="item-page">
@@ -31,7 +31,10 @@ const ItemPage = () => {
                     {item.description}
                 </div>
                 <div className="quantity">
-
+                    <div>-</div>
+                    <input type="number" defaultValue={amount} onChange={onChange}></input>
+                    <div>+</div>
+                    
                 </div>
                 <div>
                     Add to cart
