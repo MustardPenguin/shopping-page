@@ -11,8 +11,48 @@ const ItemPage = () => {
     const { id } = useParams();
     const item = getItem(id);
 
-    const onChange = (a) => {
-        console.log("Changed: " + a);
+    useEffect(() => {
+        const quantity = document.querySelector('.quantity input');
+        let amt = amount;
+        if(amount === -1) {
+            amt = "";
+        }
+        quantity.value = amt;
+        console.log(amount);
+    }, [amount])
+
+    const onChange = () => {
+        const quantity = document.querySelector('.quantity input');
+        let value = quantity.value;
+        console.log(value);
+        console.log(value > 99);
+        
+        if(value < 1 && value !== "") {
+            value = 1;
+        } else if(value > 99) {
+            value = 99;
+        }
+
+        if(value === "") {
+            value = -1;
+        }
+        console.log(value);
+        setAmount( parseInt(value) );
+    }
+
+    const arrowClick = (e) => {
+        const target = e.target;
+        
+        if(target.getAttribute('value') === "+" && amount + 1 < 100) {
+            setAmount(amount + 1);
+        } else if(target.getAttribute('value') === "-" && amount - 1 > 0) {
+            setAmount(amount - 1);
+        }
+    }
+
+    const round = (num, places) => {
+        places = Math.pow(10, places);
+        return Math.floor(num * places) / places;
     }
 
     return (
@@ -25,15 +65,15 @@ const ItemPage = () => {
                     {item.name}
                 </div>
                 <div>
-                    ${item.price}
+                    ${round( item.price * (amount === -1 ? 1 : amount), 2 )}
                 </div>
                 <div>
                     {item.description}
                 </div>
                 <div className="quantity">
-                    <div>-</div>
+                    <div onClick={arrowClick} value="-">-</div>
                     <input type="number" defaultValue={amount} onChange={onChange}></input>
-                    <div>+</div>
+                    <div onClick={arrowClick} value="+">+</div>
                     
                 </div>
                 <div>
