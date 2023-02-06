@@ -83,3 +83,34 @@
 }
 
 /* Cart */
+.cart {
+    background-color: aliceblue;
+    padding: 36px;
+}
+
+/* Close button */
+.cart-holder > div:first-child {
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 72px;
+}
+
+.cart-holder > div:first-child button {
+    font-size: 36px;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 2px;
+}
+
+/* Header */
+.cart-holder > div:nth-child(2) {
+    font-size: 36px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    padding-right: 64px;
+    padding-top: 12px;
+}

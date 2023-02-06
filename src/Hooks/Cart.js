@@ -18,9 +18,9 @@ const Cart = (props) => {
     const toggleCart = (event) => {
         if(cartCooldown) { return; }
         
-        if(event.target.classList.contains("cart")) { return; }
+        if(!event.target.classList.contains('cart-background') && !event.target.classList.contains('close-button')) { return; }
         setCartCooldown();
-
+        
         const cartBackground = document.querySelector('.cart-background');
         const cartIcon = document.querySelector(".cart-icon");
         const cart = document.querySelector(".cart");
@@ -30,7 +30,6 @@ const Cart = (props) => {
             cart.classList.remove("disable-cart");
         } else {
             cartBackground.classList.add("disable-cart");
-            /*cart.classList.add("disable-cart");*/
             cart.classList.add("cart-disable-animation");
             cart.classList.remove("enable-cart");
             cart.classList.remove("cart-enable-animation");
@@ -41,11 +40,16 @@ const Cart = (props) => {
     return (
         <div className="cart-background disable-cart disable-cart-animation initial-class" onClick={toggleCart}>
             <div className="cart disable-cart initial-class">
-                <div className="cart-top">
-                    cart
-                </div>
                 <div className="cart-holder">
-                    holder
+                    <div>
+                        <button className="close-button">X</button>
+                    </div>
+                    <div>
+                        Shopping cart
+                    </div>
+                    <div>
+                        Cart
+                    </div>
                 </div>
             </div>
         </div>

@@ -5,11 +5,6 @@ import uniqid from "uniqid";
 import Images from "./Images";
 
 const Shoppingpage = () => {
-    
-    const clicked = (id) => {
-        console.log(id);
-        window.location.href = "shop/" + id;
-    }
 
     return (
         <div className="shop">
@@ -21,7 +16,6 @@ const Shoppingpage = () => {
                                 <img src={
                                     Images[item.id]
                                 } alt={item.name}
-                                //onClick={() => clicked(item.id)}
                                 className="shop-item-image"
                                 ></img>
                             </Link>
