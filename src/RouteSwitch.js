@@ -4,14 +4,19 @@ import Shoppingpage from "./Hooks/Shopping-page";
 import React, { useEffect, useState } from "react";
 import Navigation from "./Hooks/Navigation";
 import Cart from "./Hooks/Cart";
-import Items from "./Hooks/Items";
 import ItemPage from "./Hooks/ItemPage";
 
 const RouteSwitch = () => {
+    const [cart, setCart] = useState([]);
+
+    const updateCart = (item) => {
+        console.log("Update cart");
+    }
+
     return (
         <BrowserRouter>
             <div>
-                <Cart />
+                <Cart cart={cart} updateCart={updateCart}/>
                 <Navigation />
                 
                 <Routes>

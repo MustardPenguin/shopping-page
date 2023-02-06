@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import "../Styles/cart.css";
 
-const Cart = () => {
-    const [items, setItems] = useState({});
-
+const Cart = (props) => {
+    const cart = props.cart;
+    const updateCart = props.updateCart;
     let cartCooldown = false;
 
     const setCartCooldown = (cd) => {
@@ -13,14 +13,11 @@ const Cart = () => {
             await sleep(1000);
             cartCooldown = false;
         }
-
         cooldown();
     }
 
     const toggleCart = (event) => {
         if(cartCooldown) { return; }
-
-
         
         if(event.target.classList.contains("cart")) { return; }
         setCartCooldown();

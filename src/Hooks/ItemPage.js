@@ -55,6 +55,10 @@ const ItemPage = () => {
         return Math.floor(num * places) / places;
     }
 
+    const addToCart = () => {
+        console.log("Add to cart");
+    }
+
     return (
         <div className="item-page">
             <div className="item-page-image">
@@ -76,12 +80,12 @@ const ItemPage = () => {
                     <div onClick={arrowClick} value="+">+</div>
                     
                 </div>
-                <div>
+                <button className="cart-button" onClick={addToCart}>
                     Add to cart
-                </div>
-                <div>
-                    go back
-                </div>
+                </button>
+                <a className="go-back" href="/shop">
+                    Go back
+                </a>
             </div>
             
         </div>
