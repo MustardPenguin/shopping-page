@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Items from "./Items";
 import "../Styles/shop.css";
 import uniqid from "uniqid";
@@ -16,11 +17,14 @@ const Shoppingpage = () => {
                 {Items.map( (item) => {
                     return (
                         <div key={uniqid()} className="shop-item">
-                            <img src={
-                                Images[item.id]
-                            } alt={item.name}
-                            onClick={() => clicked(item.id)}
-                            ></img>
+                            <Link to={"/shop/" + item.id}>
+                                <img src={
+                                    Images[item.id]
+                                } alt={item.name}
+                                //onClick={() => clicked(item.id)}
+                                className="shop-item-image"
+                                ></img>
+                            </Link>
                             <div className="item-info">
                                 <div>{item.name}</div>
                                 <div>${item.price}</div>

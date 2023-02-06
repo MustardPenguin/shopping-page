@@ -3,7 +3,6 @@ import "../Styles/cart.css";
 
 const Cart = (props) => {
     const cart = props.cart;
-    const updateCart = props.updateCart;
     let cartCooldown = false;
 
     const setCartCooldown = (cd) => {

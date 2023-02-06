@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "../Styles/navigation.css";
 import cart from "../Images/cart1.png";
 
@@ -31,12 +32,12 @@ const navigation = () => {
                 Shopping page
             </div>
             <div>
-                <a href="/">
+                <Link to="/">
                     Home
-                </a>
-                <a href="/shop">
+                </Link>
+                <Link to="/shop">
                     Shop
-                </a>
+                </Link>
 
                 <a className="cart-icon">
                     <img src={cart} onClick={toggleCart} alt="cart"></img>
