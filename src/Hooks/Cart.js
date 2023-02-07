@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 import "../Styles/cart.css";
+import uniqid from 'uniqid';
+import Items from './Items';
+import Images from './Images';
 
 const Cart = (props) => {
     const cart = props.cart;
@@ -13,6 +16,13 @@ const Cart = (props) => {
             cartCooldown = false;
         }
         cooldown();
+    }
+
+    const getItem = (id) => Items.find( (item) => item.id === id );
+    
+    const round = (num, places) => {
+        places = Math.pow(10, places);
+        return Math.floor(num * places) / places;
     }
 
     const toggleCart = (event) => {
@@ -47,8 +57,32 @@ const Cart = (props) => {
                     <div>
                         Shopping cart
                     </div>
-                    <div>
-                        Cart
+                    <div className="cart-items">
+                        {cart.map( (item) => {
+                            const itemObj = getItem(item.id)
+                            return (
+                                <div 
+                                key={uniqid()}
+                                className="cart-item"
+                                >
+                                    
+                                    <img alt={item.name} src={Images[item.id]}></img>
+                                    <div>
+                                        <div className="cart-item-info">
+                                            <div>
+                                                {itemObj.name}
+                                            </div>
+                                            <div>
+                                                ${round( item.amount * itemObj.price, 2 )}
+                                            </div>
+                                            <div>
+                                                x{item.amount}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            )
+                        })}
                     </div>
                 </div>
             </div>
