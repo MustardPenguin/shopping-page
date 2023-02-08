@@ -47,6 +47,30 @@ const Cart = (props) => {
         }
     }
 
+    const updateCart = (item, amount) => {
+        console.log(item);
+        console.log(amount);
+    }
+
+    const onKey = (e, item) => {
+        const currentVal = e.target.value;
+        updateCart(item, currentVal);
+    }
+
+    const onIncrement = (e, item) => {
+        const parentNode = e.target.parentNode;
+        const childNodes = parentNode.childNodes;
+        const input = childNodes[1];
+
+        if(e.target.textContent === "+") {
+            input.value = parseInt(input.value) + 1;
+        } else {
+            input.value = parseInt(input.value) - 1;
+        }
+
+        updateCart(item, input.value);
+    }
+
     return (
         <div className="cart-background disable-cart disable-cart-animation initial-class" onClick={toggleCart}>
             <div className="cart disable-cart initial-class">
@@ -75,8 +99,10 @@ const Cart = (props) => {
                                             <div>
                                                 ${round( item.amount * itemObj.price, 2 )}
                                             </div>
-                                            <div>
-                                                x{item.amount}
+                                            <div className="cart-quantity">
+                                                <div onClick={(e) => onIncrement(e, item)}>-</div>
+                                                <input type="number" defaultValue={item.amount} onKeyUp={(e) => onKey(e, item)}></input>
+                                                <div onClick={(e) => onIncrement(e, item)}>+</div>
                                             </div>
                                         </div>
                                     </div>
