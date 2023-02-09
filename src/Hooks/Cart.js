@@ -3,9 +3,11 @@ import "../Styles/cart.css";
 import uniqid from 'uniqid';
 import Items from './Items';
 import Images from './Images';
+import lodash from 'lodash';
 
 const Cart = (props) => {
     const cart = props.cart;
+    const setCart = props.setCart;
     let cartCooldown = false;
 
     const setCartCooldown = (cd) => {
@@ -19,7 +21,7 @@ const Cart = (props) => {
     }
 
     const getItem = (id) => Items.find( (item) => item.id === id );
-    
+
     const round = (num, places) => {
         places = Math.pow(10, places);
         return Math.floor(num * places) / places;
@@ -48,8 +50,24 @@ const Cart = (props) => {
     }
 
     const updateCart = (item, amount) => {
-        console.log(item);
-        console.log(amount);
+        let cartCopy = lodash.cloneDeep(cart);
+        if(amount === "" || parseInt(amount) < 1) {
+            let index;
+            for(let i = 0; i < cartCopy.length; i++) {
+                if(cartCopy[i].id === item.id) {
+                    index = i;
+                    break;
+                }
+            }
+            cartCopy.splice(index, 1);
+            console.log(cartCopy);
+        } else {
+            let cartItem = cartCopy.find( (itemCopy) => itemCopy.id === item.id);
+            cartItem.amount = parseInt(amount);
+        }
+        
+        
+        setCart(cartCopy);
     }
 
     const onKey = (e, item) => {

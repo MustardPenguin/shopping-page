@@ -1,4 +1,4 @@
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import Items from "./Items";
 import Images from "./Images";
@@ -77,9 +77,9 @@ const ItemPage = (props) => {
                 <button className="cart-button" onClick={() => updateCart(item.id, amount)}>
                     Add to cart
                 </button>
-                <a className="go-back" href="/shop">
+                <Link to="/shop" className="go-back">
                     Go back
-                </a>
+                </Link>
             </div>
             
         </div>

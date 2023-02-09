@@ -43,7 +43,7 @@ const RouteSwitch = () => {
     return (
         <BrowserRouter>
             <div>
-                <Cart cart={cart}/>
+                <Cart cart={cart} setCart={setCart}/>
                 <Navigation />
                 
                 <Routes>
