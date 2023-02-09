@@ -4,6 +4,7 @@ import uniqid from 'uniqid';
 import Items from './Items';
 import Images from './Images';
 import lodash from 'lodash';
+import items from "./Items";
 
 const Cart = (props) => {
     const cart = props.cart;
@@ -52,20 +53,11 @@ const Cart = (props) => {
     const updateCart = (item, amount) => {
         let cartCopy = lodash.cloneDeep(cart);
         if(amount === "" || parseInt(amount) < 1) {
-            let index;
-            for(let i = 0; i < cartCopy.length; i++) {
-                if(cartCopy[i].id === item.id) {
-                    index = i;
-                    break;
-                }
-            }
-            cartCopy.splice(index, 1);
-            console.log(cartCopy);
+            cartCopy = cartCopy.filter( (cartItem) => cartItem.id !== item.id);
         } else {
             let cartItem = cartCopy.find( (itemCopy) => itemCopy.id === item.id);
             cartItem.amount = parseInt(amount);
         }
-        
         
         setCart(cartCopy);
     }
@@ -87,6 +79,15 @@ const Cart = (props) => {
         }
 
         updateCart(item, input.value);
+    }
+
+    const getCartTotal = () => {
+        let total = 0;
+        cart.forEach( (item) => {
+            total += getItem(item.id).price * item.amount;
+            
+        })
+        return total;
     }
 
     return (
@@ -127,6 +128,9 @@ const Cart = (props) => {
                                 </div>
                             )
                         })}
+                    </div>
+                    <div>
+                        Total: {getCartTotal()}
                     </div>
                 </div>
             </div>
