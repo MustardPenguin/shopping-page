@@ -87,7 +87,7 @@ const Cart = (props) => {
             total += getItem(item.id).price * item.amount;
             
         })
-        return total;
+        return round(total, 2);
     }
 
     return (
@@ -129,9 +129,15 @@ const Cart = (props) => {
                             )
                         })}
                     </div>
-                    <div>
+                    <div className="price-total">
                         Total: {getCartTotal()}
                     </div>
+                    <div className="checkout">
+                        <button>
+                            Check out
+                        </button>
+                    </div>
+                    
                 </div>
             </div>
         </div>
